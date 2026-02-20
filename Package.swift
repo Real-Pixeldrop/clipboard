@@ -7,7 +7,8 @@ let package = Package(
     targets: [
         .executableTarget(
             name: "ClipBoard",
-            path: "Sources/ClipBoard"
+            path: "Sources/ClipBoard",
+            resources: [.copy("Resources")]
         )
     ]
 )
