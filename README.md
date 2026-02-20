@@ -1,57 +1,35 @@
-# ClipBoard 📋
+# ClipBoard
 
-A lightweight macOS menu bar clipboard manager. Keeps your last 10 copied items accessible with one click.
+Gestionnaire de presse-papiers léger. Garde tes 10 derniers éléments copiés, toujours accessibles dans la menu bar.
 
-![macOS](https://img.shields.io/badge/macOS-13%2B-blue) ![Swift](https://img.shields.io/badge/Swift-5.9-orange) ![License](https://img.shields.io/badge/license-MIT-green)
+## Download
 
-## Features
+[Télécharger ClipBoard.zip](https://github.com/Real-Pixeldrop/clipboard/releases/latest/download/ClipBoard.zip)
 
-- 📋 Stores your last 10 clipboard entries
-- 🖱️ One-click to re-copy any item
-- 💾 Persistent history (survives app restart)
-- 🪶 Native Swift — ultra lightweight, no Electron
-- 🚫 No dock icon — lives in your menu bar
-- 🇫🇷 French UI
+1. Télécharge le zip
+2. Dézipe
+3. Glisse dans Applications
+4. Double-clic. C'est prêt.
 
-## Install
+## Comment ça marche
 
-### Download (recommended)
+1. **Copie** quelque chose (Cmd+C)
+2. **Clique** sur l'icône ClipBoard dans la menu bar
+3. **Retrouve** tes 10 derniers éléments copiés
+4. **Clique** sur un élément pour le remettre dans le presse-papiers
 
-1. Download [ClipBoard-macOS.zip](https://github.com/Real-Pixeldrop/clipboard/releases/latest/download/ClipBoard-macOS.zip)
-2. Unzip
-3. Double-click `ClipBoard`
-4. Done — the app appears in your menu bar
-
-### From source
+## From source
 
 ```bash
 git clone https://github.com/Real-Pixeldrop/clipboard.git
 cd clipboard
 swift build -c release
-.build/release/ClipBoard
+cp -r .build/release/ClipBoard.app /Applications/ 2>/dev/null || \
+  cp .build/release/ClipBoard /Applications/
 ```
 
-## Usage
+## One-liner install
 
-1. Copy anything (⌘C)
-2. Click the 📋 icon in your menu bar
-3. See your last 10 copies
-4. Click any item to re-copy it to your clipboard
-5. Paste it anywhere (⌘V)
-
-## How it works
-
-- Monitors the system clipboard every 0.5s
-- Stores history in `~/Library/Application Support/ClipBoard/history.json`
-- No network access, no telemetry, no permissions needed
-- Deduplicates entries (moves existing items to the top)
-
-## Build requirements
-
-- macOS 13+
-- Swift 5.9+
-- Xcode or Swift toolchain
-
-## License
-
-MIT
+```bash
+curl -sL https://github.com/Real-Pixeldrop/clipboard/releases/latest/download/ClipBoard.zip -o /tmp/cb.zip && unzip -o /tmp/cb.zip -d /Applications/ && xattr -cr /Applications/ClipBoard.app && open /Applications/ClipBoard.app
+```
