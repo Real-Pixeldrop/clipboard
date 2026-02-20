@@ -15,22 +15,21 @@ A lightweight macOS menu bar clipboard manager. Keeps your last 10 copied items 
 
 ## Install
 
+### Download (recommended)
+
+1. Download [ClipBoard-macOS.zip](https://github.com/Real-Pixeldrop/clipboard/releases/latest/download/ClipBoard-macOS.zip)
+2. Unzip
+3. Double-click `ClipBoard`
+4. Done — the app appears in your menu bar
+
 ### From source
 
 ```bash
 git clone https://github.com/Real-Pixeldrop/clipboard.git
 cd clipboard
 swift build -c release
-cp .build/release/ClipBoard /usr/local/bin/clipboard
+.build/release/ClipBoard
 ```
-
-### Run
-
-```bash
-clipboard
-```
-
-Or double-click the binary. The app appears in your menu bar with a 📋 icon.
 
 ## Usage
 
